@@ -8,7 +8,44 @@ Source code for WeatherCube project
 - Determine location of the Cube in a way that allows the code to be shared (ie. avoid hard-coding coordinates if possible)
 - Instructions on how to run this code on cube via USB (much faster for debugging)
 
-Community participation is welcomed! If you are interested then introduce yourself on the CubeTube forum (http://www.cubetube.org/forum/?place=topic%2Fcubetalk%2FHTJx6q50WAo%2Fdiscussion), and state which parts of the project you would be excited to work on. 
+Community participation is welcomed! If you are interested then introduce yourself on the [CubeTube forum](http://www.cubetube.org/forum/?place=topic%2Fcubetalk%2FHTJx6q50WAo%2Fdiscussion), and state which parts of the project you would be excited to work on. 
+
+# Setup
+
+This section is assuming that you have `npm` and `particle-cli` installed, and that you have clone this repository on to your local machine.  For more help, see the [Particle Documention](https://docs.particle.io/guide/tools-and-features/cli/).
+
+Get a forecast.io API key from [their website](https://developer.forecast.io/).
+
+Create a webhook using the template in the code repository:
+
+	particle webhook create webhook.json
+
+Copy down your GPS location using some service, such as [this website](http://www.gps-coordinates.net/).
+
+Begin monitoring for particle cloud events so we can test the webhook.
+
+	particle subscribe mine
+
+Test the webbook by inserting your latitude, longitude, and API key and running this command:
+
+	particle publish get_weather "{\"lat\":\"38.1234\",\"lon\":\"-77.1234\", \"weather_key\":\"AABBCCDDEEFFGGHHIIJJKKLL\"}"
+	
+	# sample responses:
+	{"name":"get_weather","data":"{\"lat\":\"38.1234\",\"lon\":\"-77.1234\", \"weather_key\":\"AABBCCDDEEFFGGHHIIJJKKLL\"}","ttl":"60","published_at":"2015-08-07T18:01:41.679Z","coreid":"001"}
+	{"name":"hook-response/get_weather/0","data":"\"cloudy~76.65~0~0\"","ttl":"60","published_at":"2015-08-07T18:01:41.982Z","coreid":"undefined"}
+	# Weather info returned! data="cloudy~76.65~0~0"
+	
+	
+Turn on the Serial monitor so you can see what's happening on your particle:
+
+	particle serial monitor
+
+Finally, run `weather.ino` on your Particle by either uploading the code via the web portal, or running the following command:
+
+	particle flash <CORE_ID> weather.ino
+
+
+
 
 ## Useful Info
 
