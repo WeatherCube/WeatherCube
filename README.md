@@ -40,7 +40,7 @@ Turn on the Serial monitor so you can see what's happening on your particle:
 
 	particle serial monitor
 
-Finally, run `weather.ino` on your Particle by either uploading the code via the web portal, or running the following command:
+Finally, add your latitude, longitude, and API key to the top of the `weather.ino` file.  Upload the code to your Particle; either uploading the code via the web portal, or running the following command:
 
 	particle flash <CORE_ID> weather.ino
 
