@@ -29,10 +29,18 @@ Commands
 	# create webhook
 	particle webhook create webhook.json
 
-	# call webhook
-	particle publish get_weather "{\"lat\":\"38.8977\",\"lon\":\"-77.0366\"}"
+	# call webhook. You will need to provide you own `weather_key`
+	particle publish get_weather "{\"lat\":\"38.8977\",\"lon\":\"-77.0366\", \"weather_key\":\"AABBCCDDEEFFGGHHIIJJKKLLMM\"}"
 
 Links
 
 - Parsing JSON in the cloud: https://community.particle.io/t/cloud-json-parsing/11223/2
 - Calling webhook from CLI: https://community.particle.io/t/syntax-for-sending-webhook-variables-from-cli/12341
+
+# Weather API
+
+## Forecast.io
+
+Project currently uses [forecast.io API](https://developer.forecast.io/). Other weather APIs could be used, but you would need to redefine the webhook `requestTemplate`. The advantage of forecast.io is they provide hyper-accurate weather for your GPS location, and they can give you a very accurate predicition about minutes until rain will start. 
+
+![Screenshots from Dark Sky App which uses forecast.io data](http://www.tech-shutter.com/wp-content/uploads/2015/05/screen-shot-2014-01-27-at-5-22-25-pm.png)

@@ -1,0 +1,11 @@
+{
+	"event": "get_weather",
+	"url": "https://api.forecast.io/forecast/{{weather_key}}/{{lat}},{{lon}}?exclude=minutely,hourly,daily,flags,alerts",
+	"requestType": "GET",
+	"headers": {
+		"Content-Type": "application/json"
+	},
+	"responseTemplate": "{{#currently}}{{icon}}~{{temperature}}~{{precipProbability}}~{{precipIntensity}}{{/currently}}",
+	"query": {},
+	"mydevices": true
+}
