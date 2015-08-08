@@ -1,3 +1,9 @@
 
 # OSX Noise
 .DS_Store
+
+# Particle compile artifacts
+*.bin
+
+# Local settings
+settings.h

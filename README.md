@@ -14,6 +14,14 @@ Community participation is welcomed! If you are interested then introduce yourse
 
 This section is assuming that you have `npm` and `particle-cli` installed, and that you have clone this repository on to your local machine.  For more help, see the [Particle Documention](https://docs.particle.io/guide/tools-and-features/cli/).
 
+The cubetube library is included as a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
+Run the following two commands after cloning the repository:
+
+	git submodule init
+	git submodule update
+
+Alternatively clone the repository with the '--recursive' flag.
+
 Get a forecast.io API key from [their website](https://developer.forecast.io/).
 
 Create a webhook using the template in the code repository:
@@ -40,12 +48,15 @@ Turn on the Serial monitor so you can see what's happening on your particle:
 
 	particle serial monitor
 
-Finally, add your latitude, longitude, and API key to the top of the `weather.ino` file.  Upload the code to your Particle; either uploading the code via the web portal, or running the following command:
+Finally, copy settings.h.example to settings.h and set your latitude, longitude, and API key.  Upload the code to your Particle; either uploading the code via the web portal, or running the following command:
 
 	particle flash <CORE_ID> weather.ino
 
 
+## Issues
 
+The newer version of the neopixel library modified for the photon appears to be broken for the core and causes odd flickering of LED colours.
+I've included a copy of the older core-only libraries. If using the photon read the comments in particle.include.
 
 ## Useful Info
 
