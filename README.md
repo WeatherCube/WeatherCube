@@ -1,5 +1,5 @@
 # WeatherCube
-Source code for WeatherCube project
+A project to show your local weather on www.cubetube.org/gallery/
 
 # Goals
 - Cube animations corresponding to different weather types (clear-day, clear-night, rain, snow, wind, etc)
