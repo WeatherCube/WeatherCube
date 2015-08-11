@@ -1,0 +1,5 @@
+// Particle Specific Info
+// Enter your latitude, longitude, and API key (as a string) below
+float LOCATION_LAT = YOUR_INFO_HERE;
+float LOCATION_LON = YOUR_INFO_HERE;
+String WEATHER_API_KEY = YOUR_INFO_HERE;

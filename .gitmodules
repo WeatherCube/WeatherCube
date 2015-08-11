@@ -1,0 +1,3 @@
+[submodule "Cubetube-Library"]
+	path = Cubetube-Library
+	url = https://github.com/enjrolas/Cubetube-Library.git

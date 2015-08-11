@@ -1,0 +1,12 @@
+weather.cpp
+settings.h
+Cubetube-Library/library/beta-cube-library.cpp
+Cubetube-Library/library/beta-cube-library.h
+
+# Comment the next two lines if using the photon
+lib/neopixel.cpp
+lib/neopixel.h
+
+# Uncomment the next two lines if using the photon
+# Cubetube-Library/library/neopixel.cpp
+# Cubetube-Library/library/neopixel.h
